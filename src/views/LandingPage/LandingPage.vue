@@ -4,7 +4,7 @@
       <div class="bx--col-lg-16">
         <cv-breadcrumb noTrailingSlash aria-label="Page navigation">
           <cv-breadcrumb-item>
-            <cv-link href="/">Getting started</cv-link>
+            <cv-link href="/">Welcome</cv-link>
           </cv-breadcrumb-item>
         </cv-breadcrumb>
         <h1 class="landing-page__heading">Design &amp; build with Carbon</h1>
@@ -26,7 +26,20 @@
                     tools and resources, human interface guidelines, and a
                     vibrant community of contributors.
                   </p>
-                  <cv-button>Learn more</cv-button>
+                  <div v-if="!$auth.loading">
+                    <cv-button v-if="!$auth.isAuthenticated" @click="login"
+                      >Log in</cv-button
+                    >
+                    <cv-button
+                      v-if="$auth.isAuthenticated"
+                      @click="logout"
+                      :kind="danger"
+                      >Log out</cv-button
+                    >
+                  </div>
+                  <div v-else>
+                    <cv-button-skeleton :size="size"></cv-button-skeleton>
+                  </div>
                 </div>
                 <div class="bx--col-md-4 bx--offset-lg-1 bx--col-lg-8">
                   <img
@@ -98,6 +111,18 @@ export default {
       PersonFavorite32,
       Application32
     });
+  },
+  methods: {
+    // Log the user in
+    login() {
+      this.$auth.loginWithRedirect();
+    },
+    // Log the user out
+    logout() {
+      this.$auth.logout({
+        returnTo: window.location.origin
+      });
+    }
   }
 };
 </script>
@@ -113,7 +138,7 @@ export default {
 
 .landing-page__banner {
   padding-top: $spacing-05;
-  padding-bottom: $spacing-07 * 4;
+  padding-bottom: $spacing-07 * 2;
   @include landing-page-background;
 }
 
