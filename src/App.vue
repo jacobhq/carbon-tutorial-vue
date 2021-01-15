@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <tutorial-header />
-    <cv-content id="#main-content">
+    <cv-content id="#main-content" style="margin-top: 3rem;">
       <router-view />
     </cv-content>
   </div>

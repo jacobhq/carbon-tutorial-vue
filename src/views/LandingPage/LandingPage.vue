@@ -30,12 +30,17 @@
                     <cv-button v-if="!$auth.isAuthenticated" @click="login"
                       >Log in</cv-button
                     >
-                    <cv-button
-                      v-if="$auth.isAuthenticated"
-                      @click="logout"
-                      :kind="danger"
-                      >Log out</cv-button
+                    <cv-button-set v-if="$auth.isAuthenticated">
+                        <cv-button
+                      to="/app"
+                      >Enter app</cv-button
                     >
+                    <cv-button
+                      @click="logout"
+                      kind="danger"
+                      >Logout</cv-button
+                    >
+                    </cv-button-set>
                   </div>
                   <div v-else>
                     <cv-button-skeleton :size="size"></cv-button-skeleton>
