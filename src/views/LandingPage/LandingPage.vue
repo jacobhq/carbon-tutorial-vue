@@ -4,7 +4,7 @@
       <div class="bx--col-lg-16">
         <cv-breadcrumb noTrailingSlash aria-label="Page navigation">
           <cv-breadcrumb-item>
-            <cv-link href="/">Welcome</cv-link>
+            <cv-link to="/">Welcome</cv-link>
           </cv-breadcrumb-item>
         </cv-breadcrumb>
         <h1 class="landing-page__heading">Design &amp; build with Carbon</h1>
@@ -31,19 +31,14 @@
                       >Log in</cv-button
                     >
                     <cv-button-set v-if="$auth.isAuthenticated">
-                        <cv-button
-                      to="/app"
-                      >Enter app</cv-button
-                    >
-                    <cv-button
-                      @click="logout"
-                      kind="danger"
-                      >Logout</cv-button
-                    >
+                      <cv-button @click="app">Enter app</cv-button>
+                      <cv-button @click="logout" kind="danger"
+                        >Logout</cv-button
+                      >
                     </cv-button-set>
                   </div>
                   <div v-else>
-                    <cv-button-skeleton :size="size"></cv-button-skeleton>
+                    <cv-button-skeleton></cv-button-skeleton>
                   </div>
                 </div>
                 <div class="bx--col-md-4 bx--offset-lg-1 bx--col-lg-8">
@@ -127,6 +122,9 @@ export default {
       this.$auth.logout({
         returnTo: window.location.origin
       });
+    },
+    app() {
+        this.$router.push('app')
     }
   }
 };

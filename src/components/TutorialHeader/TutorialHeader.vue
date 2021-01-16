@@ -5,7 +5,7 @@
         >Skip to content</cv-skip-to-content
       >
 
-      <cv-header-name to="/" prefix="Desica">Git</cv-header-name>
+      <cv-header-name href="/" prefix="Desica">Git</cv-header-name>
 
       <cv-header-nav aria-label="Carbon tutorial nav">
         <cv-header-menu-item to="/repos">Repositories</cv-header-menu-item>
@@ -15,7 +15,10 @@
         <cv-header-global-action aria-label="Notifications">
           <notification-20 />
         </cv-header-global-action>
-        <cv-header-global-action aria-label="User avatar" @click="toast = !toast">
+        <cv-header-global-action
+          aria-label="User avatar"
+          @click="toast = !toast"
+        >
           <user-avatar-20 />
         </cv-header-global-action>
         <cv-header-global-action aria-label="App switcher">
@@ -28,12 +31,19 @@
         <user-avatar-32 />
         <h1 class="toast__heading">Hello</h1>
       </div>
-      <br>
+      <br />
       <div v-if="!$auth.loading">
-        <cv-button v-if="!$auth.isAuthenticated" @click="login" style="width: 100%"
+        <cv-button
+          v-if="!$auth.isAuthenticated"
+          @click="login"
+          style="width: 100%"
           >Log in</cv-button
         >
-        <cv-button v-if="$auth.isAuthenticated" @click="logout" kind="danger" style="width: 100%"
+        <cv-button
+          v-if="$auth.isAuthenticated"
+          @click="logout"
+          kind="danger"
+          style="width: 100%"
           >Log out</cv-button
         >
       </div>
@@ -54,9 +64,9 @@ export default {
   name: 'TutorialHeader',
   components: { Notification20, UserAvatar20, AppSwitcher20, UserAvatar32 },
   data() {
-      return {
-          toast: false
-      }
+    return {
+      toast: false
+    };
   },
   methods: {
     // Log the user in
