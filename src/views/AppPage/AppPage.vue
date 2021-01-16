@@ -1,7 +1,5 @@
 <template>
-  <div class="bg">
     <section></section>
-  </div>
 </template>
 
 <style lang="scss">
