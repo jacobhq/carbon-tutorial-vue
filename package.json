@@ -5,10 +5,10 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "ci-check": "yarn format:diff",
-    "format:diff": "prettier --list-different \"src/**/*.{js,vue,scss}\"",
+    "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit"
+    "ci-check": "yarn format:diff",
+    "format:diff": "prettier --list-different \"src/**/*.{js,vue,scss}\""
   },
   "dependencies": {
     "@auth0/auth0-spa-js": "^1.13.6",
@@ -16,6 +16,7 @@
     "@carbon/vue": "^2.12.0",
     "carbon-components": "^10.4.1",
     "core-js": "^2.6.5",
+    "register-service-worker": "^1.7.1",
     "vue": "^2.6.10",
     "vue-apollo": "^3.0.0-beta.11",
     "vue-router": "^3.0.3"
@@ -23,6 +24,7 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.9.0",
     "@vue/cli-plugin-eslint": "^3.9.0",
+    "@vue/cli-plugin-pwa": "~4.5.0",
     "@vue/cli-plugin-unit-jest": "^3.9.0",
     "@vue/cli-service": "^3.9.0",
     "@vue/eslint-config-prettier": "^4.0.1",
@@ -38,9 +40,6 @@
     "vue-cli-plugin-apollo": "^0.21.0",
     "vue-template-compiler": "^2.6.10"
   },
-  "prettier": {
-    "singleQuote": true
-  },
   "eslintConfig": {
     "root": true,
     "env": {
@@ -54,6 +53,9 @@
     "parserOptions": {
       "parser": "babel-eslint"
     }
+  },
+  "prettier": {
+    "singleQuote": true
   },
   "postcss": {
     "plugins": {

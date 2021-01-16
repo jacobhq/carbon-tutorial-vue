@@ -1,7 +1,11 @@
 <template>
   <div id="app">
     <tutorial-header />
-    <cv-content id="#main-content" style="margin-top: 3rem;">
+    <cv-toast-notification 
+    style="position: fixed; z-index: 99; bottom: 5px; left: 10px;"
+  :title="title"
+  :caption="caption"></cv-toast-notification>
+    <cv-content id="#main-content" style="margin-top: 3rem; padding: 0;">
       <router-view />
     </cv-content>
   </div>
@@ -14,6 +18,23 @@ export default {
   name: 'App',
   components: {
     TutorialHeader
+  },
+  data() {
+      return {
+          title: 'Update available',
+          caption: 'A newer version of this page is available.',
+      }
+  },
+  created() {
+    if (this.$workbox) {
+      this.$workbox.addEventListener('waiting', () => {
+        this.showUpdateUI = true;
+      });
+    }
+  },
+  async accept() {
+    this.showUpdateUI = false;
+    await this.$workbox.messageSW({ type: 'SKIP_WAITING' });
   }
 };
 </script>

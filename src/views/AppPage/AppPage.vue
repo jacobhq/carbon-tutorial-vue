@@ -5,5 +5,5 @@
 </template>
 
 <style lang="scss">
-    @import '../../styles/carbon-utils';
+@import '../../styles/carbon-utils';
 </style>
