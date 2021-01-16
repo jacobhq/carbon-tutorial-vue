@@ -1,9 +1,9 @@
 <template>
-  <div>
-      Hello
+  <div class="bg">
+    <section></section>
   </div>
 </template>
 
-<script>
-export default {};
-</script>
+<style lang="scss">
+    @import '../../styles/carbon-utils';
+</style>
