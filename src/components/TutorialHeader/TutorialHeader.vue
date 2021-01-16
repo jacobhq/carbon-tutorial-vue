@@ -12,6 +12,9 @@
       </cv-header-nav>
 
       <template slot="header-global">
+        <cv-header-global-action aria-label="New repository">
+          <add-20 />
+        </cv-header-global-action>
         <cv-header-global-action aria-label="Notifications">
           <notification-20 />
         </cv-header-global-action>
@@ -55,6 +58,7 @@
 </template>
 
 <script>
+import Add20 from '@carbon/icons-vue/es/add--alt/20';
 import Notification20 from '@carbon/icons-vue/es/notification/20';
 import UserAvatar20 from '@carbon/icons-vue/es/user--avatar/20';
 import AppSwitcher20 from '@carbon/icons-vue/es/app-switcher/20';
@@ -62,7 +66,13 @@ import UserAvatar32 from '@carbon/icons-vue/es/user--avatar/32';
 
 export default {
   name: 'TutorialHeader',
-  components: { Notification20, UserAvatar20, AppSwitcher20, UserAvatar32 },
+  components: {
+    Notification20,
+    UserAvatar20,
+    AppSwitcher20,
+    UserAvatar32,
+    Add20
+  },
   data() {
     return {
       toast: false
