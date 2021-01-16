@@ -1,10 +1,13 @@
 <template>
   <div id="app">
     <tutorial-header />
-    <cv-toast-notification 
-    style="position: fixed; z-index: 99; bottom: 5px; left: 10px;"
-  :title="title"
-  :caption="caption"></cv-toast-notification>
+    <cv-toast-notification
+      style="position: fixed; z-index: 99; bottom: 5px; left: 10px;"
+      v-if="showUpdateUI"
+      :title="title"
+      :caption="caption"
+      @close="showUpdateUI = false"
+    ></cv-toast-notification>
     <cv-content id="#main-content" style="margin-top: 3rem; padding: 0;">
       <router-view />
     </cv-content>
@@ -20,10 +23,10 @@ export default {
     TutorialHeader
   },
   data() {
-      return {
-          title: 'Update available',
-          caption: 'A newer version of this page is available.',
-      }
+    return {
+      title: 'Update available',
+      caption: 'A newer version of this page is available.'
+    };
   },
   created() {
     if (this.$workbox) {
