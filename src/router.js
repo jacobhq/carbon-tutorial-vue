@@ -39,6 +39,11 @@ export default new Router({
       path: '/app',
       name: 'app-page',
       component: () => import('./views/AppPage')
+    },
+    {
+      path: '/profile',
+      name: 'profile-page',
+      component: () => import('./views/ProfilePage')
     }
   ]
 });

@@ -29,7 +29,7 @@
         </cv-header-global-action>
       </template>
     </cv-header>
-    <cv-tile kind="standard" :light="light" v-show="toast">
+    <cv-tile kind="standard" v-show="toast">
       <div class="flex">
         <user-avatar-32 />
         <h1 class="toast__heading">Hello</h1>

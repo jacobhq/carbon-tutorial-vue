@@ -2,19 +2,31 @@
   <div class="sample">
     <div>
       <h1 class="app-page__heading">Welcome</h1>
-      <cv-progress :initial-step="initialStep" :steps="steps"></cv-progress>
+      <cv-progress :initialStep="initialStep">
+        <cv-progress-step label="Make account" :complete="(initialStep = 0)" />
+        <cv-progress-step
+          label="Set up profile"
+          :complete="(initialStep = 1)"
+        />
+        <cv-progress-step label="Create repo" :complete="(initialStep = 2)" />
+        <cv-progress-step
+          label="Push code"
+          :complete="(initialStep = 3)"
+          invalid
+        />
+      </cv-progress>
       <br />
       <div>
-        <div v-show="initialStep = 0">
+        <div v-show="(initialStep = 0)">
           <h3 class="app-page_onboarding_heading">Set up your profile</h3>
           <p class="app-page_onboarding_info">
             Head over to your profile by hitting the account icon in the navbar.
           </p>
-          <cv-button @click="actionClick">
+          <cv-button>
             Set up profile
           </cv-button>
         </div>
-        <div v-show="initialStep = 1">
+        <div v-show="(initialStep = 1)">
           <h3 class="app-page_onboarding_heading">Create a repo</h3>
           <p class="app-page_onboarding_info">
             Create a repo by hitting the create button in the navbar.
@@ -83,17 +95,15 @@ export default {
   name: 'HelloWorld',
   data() {
     return {
-      yourName: '',
-      visible: false,
       open: 1,
       initialStep: null,
-      steps: ['Set up profile', 'Create repo', 'Push code']
+      steps: ['Make account', 'Set up profile', 'Create repo', 'Push code']
     };
   },
   computed: {
-      step() {
-          return this.initialStep = this.$store.state.onboarding
-      }
+    step() {
+      return (this.initialStep = this.$store.state.step);
+    }
   }
 };
 </script>
