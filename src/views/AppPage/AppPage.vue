@@ -1,15 +1,56 @@
 <template>
   <div class="sample">
-    <div class="row">
-      <cv-tile :light="light">
-        <h1>Hello</h1>
-        <p>This is some tile content</p>
-      </cv-tile>
-      <cv-tile :light="light">
-        <h1>Hello</h1>
-        <p>This is some tile content</p>
-      </cv-tile>
-    </div>
+    <cv-accordion>
+      <cv-accordion-item :open="open == 1">
+        <template slot="title"
+          >Create your first repo
+        </template>
+        <template slot="content">
+          <p>
+            Create a repo by hitting the create button in the navbar.
+          </p>
+        </template>
+      </cv-accordion-item>
+      <cv-accordion-item>
+        <template slot="title"
+          >Section 2 title</template
+        >
+        <template slot="content">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
+        </template>
+      </cv-accordion-item>
+      <cv-accordion-item>
+        <template slot="title"
+          >Section 3 title</template
+        >
+        <template slot="content">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
+        </template>
+      </cv-accordion-item>
+      <cv-accordion-item>
+        <template slot="title"
+          >Section 4 title</template
+        >
+        <template slot="content">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
+        </template>
+      </cv-accordion-item>
+    </cv-accordion>
   </div>
 </template>
 
@@ -21,16 +62,9 @@ export default {
   data() {
     return {
       yourName: '',
-      visible: false
+      visible: false,
+      open: 1
     };
-  },
-  methods: {
-    onClick() {
-      this.visible = true;
-    },
-    modalClosed() {
-      this.visible = false;
-    }
   }
 };
 </script>
@@ -50,5 +84,9 @@ export default {
 
 .cv-text-input {
   margin: 30px 0;
+}
+
+template[slot="title"], .bx--accordion__title {
+    font-weight: 600;
 }
 </style>
