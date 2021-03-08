@@ -747,10 +747,10 @@
   resolved "https://registry.yarnpkg.com/@carbon/icon-helpers/-/icon-helpers-10.2.0.tgz#f58ab1d14b8b63d485d31e7d785d25057eac5409"
   integrity sha512-PAxu8KMuSrifF4VCW7N7bgu/QKG/Q4T9ojWUEqI0zKjTCkJnzEZTYgK1FrWAdE1uAdAwLlbPIjzIS/QzP15Uvw==
 
-"@carbon/icon-helpers@10.3.0":
-  version "10.3.0"
-  resolved "https://registry.yarnpkg.com/@carbon/icon-helpers/-/icon-helpers-10.3.0.tgz#b0a772a7be9c10d5633cf78034c5c988ce998982"
-  integrity sha512-vQegj82Y3hC17cA0g0bQUwYfcmhJD/3HyJVE/biyUXImTu82TcLrcRDTZoO9bOleEMEztMXTTDlMKTU9rrhRTw==
+"@carbon/icon-helpers@^10.14.0":
+  version "10.14.0"
+  resolved "https://registry.yarnpkg.com/@carbon/icon-helpers/-/icon-helpers-10.14.0.tgz#8c24ff6519d5210bb609c07cf5badb4c3125f5e8"
+  integrity sha512-dTU/+YYojsqwqGdh+QPMqj28C4gj2dP/ImlWoZsk8syiKqEZ7DeHksGIGz6EweQ8UhGEJFP1rFV7WwQ/ybXrFw==
 
 "@carbon/icons-vue@10.3.0":
   version "10.3.0"
@@ -759,12 +759,12 @@
   dependencies:
     "@carbon/icon-helpers" "10.2.0"
 
-"@carbon/icons-vue@^10.4.0":
-  version "10.4.0"
-  resolved "https://registry.yarnpkg.com/@carbon/icons-vue/-/icons-vue-10.4.0.tgz#4880550373d69350972fd23cff4bb8ac70d439d1"
-  integrity sha512-QzIx7WrPhM93tYsl0lnoA/LTWxnjgqyo7Sb6W1L27/bu3LNV4lzzWZOBAMm381R0RafeFCwsQtqBFJvj1zpx2Q==
+"@carbon/icons-vue@^10.27.0":
+  version "10.27.0"
+  resolved "https://registry.yarnpkg.com/@carbon/icons-vue/-/icons-vue-10.27.0.tgz#ddb216ff508274ef69f167fd5aa50498be005b44"
+  integrity sha512-29r79v+kfwUiTciOvMW0gs4a0X0Vnq/IUM9oJmN0tpRBlXTO+w/6Co5TU+B3puI38uN1LX9BugMaLDPmBZxbAw==
   dependencies:
-    "@carbon/icon-helpers" "10.3.0"
+    "@carbon/icon-helpers" "^10.14.0"
 
 "@carbon/vue@^2.12.0":
   version "2.12.0"
