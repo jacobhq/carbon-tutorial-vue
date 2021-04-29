@@ -1,0 +1,30 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: apollo-server-express
+    versions:
+    - 2.19.2
+    - 2.21.0
+    - 2.21.1
+    - 2.21.2
+    - 2.22.1
+    - 2.22.2
+  - dependency-name: "@carbon/icons-vue"
+    versions:
+    - 10.24.0
+    - 10.25.0
+    - 10.26.0
+  - dependency-name: lodash
+    versions:
+    - 4.17.20
+  - dependency-name: handlebars
+    versions:
+    - 4.7.6
+  - dependency-name: sass-loader
+    versions:
+    - 10.1.1
